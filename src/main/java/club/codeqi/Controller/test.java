@@ -7,8 +7,8 @@ import java.io.IOException;
 public class test {
     public static void main(String[] args) {
         try {
-            readfile("D:\\亚龙展旗\\项目\\上海浦西\\test");
-            //sout7z1("D:\\亚龙展旗\\项目\\上海浦西\\test");
+            //readfile("F:\\系统\\加密程序\\20210119");
+            sout7z1("F:\\系统\\加密程序\\20210119");
         } catch (FileNotFoundException ex) {
         } catch (IOException ex) {
         }
@@ -34,8 +34,8 @@ public class test {
                         //System.out.println("name=" + readfile.getName());
                         String[] strArray = absolutepath.split("\\.");
                         //System.out.println(strArray[0]);
-                        //System.out.println(strArray[1]);
-                        if(strArray[1].startsWith("7")&&strArray[1].endsWith("z")){
+                        //System.out.println(strArray[strArray.length-1]);
+                        if(strArray[strArray.length-1].startsWith("7")&&strArray[strArray.length-1].endsWith("z")){
                             File nf = new File(strArray[0]+".7z");
                             try {
                                 readfile.renameTo(nf); // 修改文件名
@@ -66,7 +66,13 @@ public class test {
                     if (!readfile.isDirectory()) {
                         String absolutepath = readfile.getAbsolutePath();
                         String[] strArray = absolutepath.split("\\.");
-                        System.out.println(strArray[1]);
+                        String ar = strArray[strArray.length-1];
+                        if(ar.equals("mp4")||ar.equals("jpg")||ar.equals("png")||ar.equals("gif")||ar.equals("mov")){
+
+                        }
+                        else if(ar.equals("7z")){
+                            System.out.println(absolutepath);
+                        }
                     } else if (readfile.isDirectory()) {
                         sout7z1(filepath + "\\" + filelist[i]);
                     }
