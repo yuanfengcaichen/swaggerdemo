@@ -27,7 +27,7 @@ public class HelloController {
      */
     @ApiOperation(value = "测试接口")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "id", value = "Id", dataType = "int", paramType = "query", required = false),
+            @ApiImplicitParam(name = "id", value = "Id", dataType = "Integer", paramType = "query", required = false),
             @ApiImplicitParam(name = "name", value = "名字", dataType = "String", paramType = "query", required = false)
     })
     @GetMapping("/hello")

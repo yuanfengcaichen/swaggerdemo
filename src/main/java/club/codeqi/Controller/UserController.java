@@ -26,11 +26,11 @@ public class UserController {
 
     @ApiOperation(value = "查询用户")
     @ApiImplicitParams({
-            @ApiImplicitParam(name = "id", value = "用户id", dataType = "int", paramType = "PathVariable", required = true)
+            @ApiImplicitParam(name = "uId", value = "用户id", dataType = "Integer", paramType = "PathVariable", required = true)
     })
-    @GetMapping("/user/{id}")
-    public User getUser(@PathVariable int id){
-        User user = userService.selectUserByid(id);
+    @GetMapping("/user/{uId}")
+    public User getUser(@PathVariable int uId){
+        User user = userService.selectUserByid(uId);
         return user;
     }
 
